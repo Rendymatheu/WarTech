@@ -9,9 +9,9 @@ if (!isset($_SESSION["ssLoginPOS"])) {
 
 require "../config/config.php";
 require "../config/functions.php";
-require "../module/mode-supplier.php";
+require "../module/mode-Customer.php";
 
-$title = "Tambah Supplier";
+$title = "Tambah Customer";
 require "../template/header.php";
 require "../template/navbar.php";
 require "../template/sidebar.php";
@@ -29,7 +29,7 @@ if (isset($_POST['simpan'])) {
 <div class="content-wrapper beach-page">
 
 <style>
-/* ===== BEACH THEME - ADD SUPPLIER ===== */
+/* ===== BEACH THEME - Add Customer ===== */
 .beach-page {
     background:
         radial-gradient(circle at top left, rgba(0, 188, 212, .18), transparent 35%),
@@ -349,8 +349,8 @@ body.dark-mode .btn-save-beach:hover {
                             <i class="fas fa-truck"></i>
                         </div>
                         <div>
-                            <h1>Tambah Supplier</h1>
-                            <p>Tambahkan data supplier baru ke sistem</p>
+                            <h1>Tambah Customer</h1>
+                            <p>Tambahkan data Customer baru ke sistem</p>
                         </div>
                     </div>
                 </div>
@@ -360,9 +360,9 @@ body.dark-mode .btn-save-beach:hover {
                             <a href="<?= $main_url ?>dashboard.php">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="<?= $main_url ?>supplier/data-supplier.php">Supplier</a>
+                            <a href="<?= $main_url ?>Customer/data-Customer.php">Customer</a>
                         </li>
-                        <li class="breadcrumb-item active">Add Supplier</li>
+                        <li class="breadcrumb-item active">Add Customer</li>
                     </ol>
                 </div>
             </div>
@@ -378,7 +378,7 @@ body.dark-mode .btn-save-beach:hover {
                     <!-- Card Header -->
                     <div class="card-header">
                         <h3 class="card-title">
-                            <i class="fas fa-plus-circle mr-2"></i> Add Supplier
+                            <i class="fas fa-plus-circle mr-2"></i> Add Customer
                         </h3>
                         <button type="reset" class="btn-reset-beach">
                             <i class="fas fa-undo"></i> Reset
@@ -399,26 +399,26 @@ body.dark-mode .btn-save-beach:hover {
                                     <div class="alert-icon">
                                         <i class="fas fa-check"></i>
                                     </div>
-                                    <span>Supplier berhasil ditambahkan!</span>
+                                    <span>Customer berhasil ditambahkan!</span>
                                     <button class="btn-close-alert" onclick="document.getElementById('beach-alert').remove()">
                                         &times;
                                     </button>
                                 </div>
                                 <?php endif; ?>
 
-                                <!-- Section: Info Supplier -->
-                                <p class="beach-section-label">Informasi Supplier</p>
+                                <!-- Section: Info Customer -->
+                                <p class="beach-section-label">Informasi Customer</p>
                                 <hr class="beach-divider">
 
                                 <!-- Nama -->
                                 <div class="form-group">
                                     <label class="beach-label" for="nama">
-                                        <i class="fas fa-user mr-1" style="opacity:.6"></i> Nama Supplier
+                                        <i class="fas fa-user mr-1" style="opacity:.6"></i> Nama Customer
                                     </label>
                                     <div class="beach-input-wrap">
                                         <input type="text" name="nama" id="nama"
                                                class="beach-input"
-                                               placeholder="Masukkan nama supplier"
+                                               placeholder="Masukkan nama Customer"
                                                autofocus required>
                                         <i class="fas fa-building field-icon"></i>
                                     </div>
@@ -448,7 +448,7 @@ body.dark-mode .btn-save-beach:hover {
                                     <div class="beach-input-wrap">
                                         <textarea name="ketr" id="ketr" rows="2"
                                                   class="beach-input"
-                                                  placeholder="Keterangan singkat mengenai supplier"
+                                                  placeholder="Keterangan singkat mengenai Customer"
                                                   required></textarea>
                                         <i class="fas fa-align-left field-icon"></i>
                                     </div>
@@ -462,7 +462,7 @@ body.dark-mode .btn-save-beach:hover {
                                     <div class="beach-input-wrap">
                                         <textarea name="alamat" id="alamat" rows="3"
                                                   class="beach-input"
-                                                  placeholder="Alamat lengkap supplier"
+                                                  placeholder="Alamat lengkap Customer"
                                                   required></textarea>
                                         <i class="fas fa-map-pin field-icon"></i>
                                     </div>
