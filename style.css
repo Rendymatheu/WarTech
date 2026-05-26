@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+    width: 100%; height: 100%;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* ============================================================
+   SPLASH SCREEN
+============================================================ */
+.splash-screen {
+    position: relative;
+    width: 100vw; height: 100vh;
+    background: linear-gradient(145deg, #e0f7fa 0%, #e3f2fd 50%, #e8f5e9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 150, 199, 0.08);
+    animation: floatBubble 5s ease-in-out infinite;
+}
+.bubble-1 { width: 320px; height: 320px; top: -80px; right: -60px; animation-delay: 0s; background: rgba(0,119,182,0.07); }
+.bubble-2 { width: 180px; height: 180px; top: 60px; left: -40px; animation-delay: 1.2s; background: rgba(0,150,199,0.09); }
+.bubble-3 { width: 90px; height: 90px; bottom: 120px; left: 80px; animation-delay: 2.5s; }
+.bubble-4 { width: 220px; height: 220px; bottom: -50px; right: 100px; animation-delay: 0.8s; background: rgba(72,202,228,0.1); }
+.bubble-5 { width: 60px; height: 60px; top: 40%; left: 15%; animation-delay: 3s; background: rgba(0,180,216,0.08); }
+
+@keyframes floatBubble {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50%       { transform: translateY(-18px) scale(1.03); }
+}
+
+.wave-container {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 160px;
+    pointer-events: none;
+}
+.wave-container svg { width: 100%; height: 100%; }
+
+.splash-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.logo-ring {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0077B6, #00B4D8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 0 0 12px rgba(0,119,182,0.10), 0 0 0 24px rgba(0,119,182,0.05);
+    animation: pulseRing 2.2s ease-in-out infinite;
+}
+
+@keyframes pulseRing {
+    0%, 100% { box-shadow: 0 0 0 12px rgba(0,119,182,0.10), 0 0 0 24px rgba(0,119,182,0.05); }
+    50%       { box-shadow: 0 0 0 16px rgba(0,119,182,0.13), 0 0 0 32px rgba(0,119,182,0.07); }
+}
+
+.app-title {
+    font-size: 3rem; font-weight: 900;
+    color: #0077B6;
+    letter-spacing: 4px;
+    line-height: 1;
+    margin-bottom: 6px;
+    animation: fadeInUp 0.7s ease 0.2s both;
+}
+
+.app-subtitle {
+    font-size: 0.85rem; font-weight: 600;
+    color: #0096C7;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    animation: fadeInUp 0.7s ease 0.3s both;
+}
+
+.welcome-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border-radius: 40px;
+    padding: 10px 22px 10px 10px;
+    box-shadow: 0 4px 20px rgba(0,119,182,0.12);
+    margin-bottom: 36px;
+    border: 1px solid rgba(0,150,199,0.15);
+    animation: fadeInUp 0.7s ease 0.4s both;
+}
+
+.avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0096C7, #00B4D8);
+    color: #fff;
+    font-size: 13px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+
+.welcome-badge span { font-size: 14px; color: #0077B6; font-weight: 600; }
+.welcome-badge strong { font-weight: 800; }
+
+.loader-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 260px;
+    animation: fadeInUp 0.7s ease 0.5s both;
+}
+
+.loader-track {
+    width: 100%; height: 5px;
+    background: rgba(0,119,182,0.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.loader-fill {
+    height: 100%; width: 0%;
+    background: linear-gradient(90deg, #0077B6, #00B4D8, #48CAE4);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.loader-text {
+    font-size: 12px;
+    color: #0096C7;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: opacity 0.3s ease;
+}
+
+.percent-text {
+    font-size: 13px; font-weight: 800;
+    color: rgba(0,119,182,0.4);
+    margin-top: 6px;
+    letter-spacing: 1px;
+    animation: fadeInUp 0.7s ease 0.6s both;
+    transition: color 0.3s ease;
+}
+
+.success-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0077B6 0%, #00B4D8 60%, #48CAE4 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+.success-overlay.show { opacity: 1; pointer-events: all; }
+
+.success-box {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 12px;
+    transform: scale(0.8); opacity: 0;
+    transition: transform 0.4s ease 0.15s, opacity 0.4s ease 0.15s;
+}
+.success-overlay.show .success-box { transform: scale(1); opacity: 1; }
+
+.check-icon {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+.success-text { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: 1px; }
+.success-sub  { font-size: 13px; color: rgba(255,255,255,0.75); font-weight: 600; }
+
+@media (max-width: 480px) {
+    .app-title { font-size: 2.2rem; letter-spacing: 3px; }
+    .logo-ring { width: 80px; height: 80px; }
+    .loader-wrap { width: 220px; }
+}
+
+/* ============================================================
+   SIDEBAR COLLAPSE — SMOOTH TRANSITION
+============================================================ */
+.main-sidebar {
+    transition: width 0.3s ease-in-out !important;
+}
+
+.main-header,
+.content-wrapper,
+.main-footer {
+    transition: margin-left 0.3s ease-in-out !important;
+}
+
+body.sidebar-collapse .main-sidebar {
+    width: 4.6rem !important;
+    overflow: hidden !important;
+}
+
+body.sidebar-collapse .main-sidebar:hover {
+    width: 260px !important;
+    overflow: visible !important;
+}
+
+body.sidebar-collapse .content-wrapper,
+body.sidebar-collapse .main-footer,
+body.sidebar-collapse .main-header {
+    margin-left: 4.6rem !important;
+}
+
+/* Sembunyikan teks saat collapsed */
+body.sidebar-collapse .nav-sidebar .p,
+body.sidebar-collapse .nav-header,
+body.sidebar-collapse .sb-user-info,
+body.sidebar-collapse .brand-text {
+    opacity: 0 !important;
+    transition: opacity 0.2s ease !important;
+}
+
+/* Tampilkan kembali saat hover */
+body.sidebar-collapse .main-sidebar:hover .nav-sidebar .p,
+body.sidebar-collapse .main-sidebar:hover .nav-header,
+body.sidebar-collapse .main-sidebar:hover .sb-user-info,
+body.sidebar-collapse .main-sidebar:hover .brand-text {
+    opacity: 1 !important;
+}
