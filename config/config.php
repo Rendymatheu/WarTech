@@ -1,14 +1,13 @@
 <?php
+$host = getenv('MYSQLHOST');
+$port = getenv('MYSQLPORT');
+$db   = getenv('MYSQLDATABASE');
+$user = getenv('MYSQLUSER');
+$pass = getenv('MYSQLPASSWORD');
 
-$main_url = "http://localhost/WarTech/";
+$conn = new mysqli($host, $user, $pass, $db, $port);
 
-$host = "127.0.0.1";
-$user = "root";
-$pass = "";
-$db   = "dbpos";
-
-$koneksi = mysqli_connect($host, $user, $pass, $db);
-
-if (!$koneksi) {
-    die("Koneksi database gagal : " . mysqli_connect_error());
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
 }
+?>
