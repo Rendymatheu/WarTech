@@ -26,7 +26,7 @@ $penjualan = getData("SELECT * FROM tbl_jual_detail WHERE no_jual = '$id'");
 <div class="content-wrapper beach-penjualan-page">
 
     <style>
-        /* ===== BEACH THEME - DETAIL PENJUALAN ===== */
+        /* BEACH THEME - DETAIL PENJUALAN  */
         .beach-penjualan-page {
             background:
                 radial-gradient(circle at top right, rgba(63, 81, 181, .14), transparent 40%),
@@ -181,9 +181,7 @@ $penjualan = getData("SELECT * FROM tbl_jual_detail WHERE no_jual = '$id'");
         .total-row td:first-child { border-radius: 14px 0 0 14px; }
         .total-row td:last-child  { border-radius: 0 14px 14px 0; }
 
-        /* ============================================================
-           DARK MODE OVERRIDES
-        ============================================================ */
+        /* DARK MODE OVERRIDES */
         body.dark-mode .beach-penjualan-page {
             background:
                 radial-gradient(circle at top right, rgba(40, 50, 120, .25), transparent 40%),
