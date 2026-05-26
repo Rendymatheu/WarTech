@@ -1,15 +1,19 @@
 <?php
-// Mengambil kredensial dari Railway Environment Variables, jika tidak ada baru pakai localhost (untuk backup)
-$host     = getenv('MYSQLHOST') ?: 'mysql.railway.internal';
-$user     = getenv('MYSQLUSER') ?: 'root';
-$password = getenv('MYSQLPASSWORD') ?: 'GpwzPVMaGfjEkkSHocssljrpPHStEqzy';
-$database = getenv('MYSQLDATABASE') ?: 'railway';
-$port     = getenv('MYSQLPORT') ?: 3306;
+// Deteksi via environment variable APP_ENV
+if (getenv('APP_ENV') === 'production') {
+    $main_url = "/";
+} else {
+    $main_url = "/WarTech/";
+}
 
-// Line 8 yang sebelumnya error, ubah menjadi seperti ini:
-$koneksi = new mysqli($host, $user, $password, $database, $port);
+$host = getenv('MYSQLHOST')     ?: "127.0.0.1";
+$user = getenv('MYSQLUSER')     ?: "root";
+$pass = getenv('MYSQLPASSWORD') ?: "";
+$db   = getenv('MYSQLDATABASE') ?: "dbpos";
+$port = getenv('MYSQLPORT')     ?: 3306;
 
-// Cek koneksi jika gagal
-if ($koneksi->connect_error) {
-    die("Koneksi gagal: " . $koneksi->connect_error);
+$koneksi = mysqli_connect($host, $user, $pass, $db, $port);
+
+if (!$koneksi) {
+    die("Koneksi database gagal : " . mysqli_connect_error());
 }
