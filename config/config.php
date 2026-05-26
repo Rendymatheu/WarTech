@@ -1,13 +1,15 @@
 <?php
-$host = getenv('MYSQLHOST');
-$port = getenv('MYSQLPORT');
-$db   = getenv('MYSQLDATABASE');
-$user = getenv('MYSQLUSER');
-$pass = getenv('MYSQLPASSWORD');
+// Mengambil kredensial dari Railway Environment Variables, jika tidak ada baru pakai localhost (untuk backup)
+$host     = getenv('MYSQLHOST') ?: 'mysql.railway.internal';
+$user     = getenv('MYSQLUSER') ?: 'root';
+$password = getenv('MYSQLPASSWORD') ?: 'GpwzPVMaGfjEkkSHocssljrpPHStEqzy';
+$database = getenv('MYSQLDATABASE') ?: 'railway';
+$port     = getenv('MYSQLPORT') ?: 3306;
 
-$conn = new mysqli($host, $user, $pass, $db, $port);
+// Line 8 yang sebelumnya error, ubah menjadi seperti ini:
+$koneksi = new mysqli($host, $user, $password, $database, $port);
 
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
+// Cek koneksi jika gagal
+if ($koneksi->connect_error) {
+    die("Koneksi gagal: " . $koneksi->connect_error);
 }
-?>
