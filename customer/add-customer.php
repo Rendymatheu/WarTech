@@ -9,7 +9,7 @@ if (!isset($_SESSION["ssLoginPOS"])) {
 
 require "../config/config.php";
 require "../config/functions.php";
-require "../module/mode-Customer.php";
+require "../module/mode-customer.php";
 
 $title = "Tambah Customer";
 require "../template/header.php";
