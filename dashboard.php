@@ -135,8 +135,8 @@ $brgNum = count($barang);
   .card-supplier { background: linear-gradient(135deg, #0096C7, #00B4D8); }
   .card-customer { background: linear-gradient(135deg, #E63946, #FF6B6B); }
   .card-barang   { background: linear-gradient(135deg, #D4AC0D, #F4D03F); color: #fff; }
-  .card-barang:hover { color: #333; }
-  .card-barang .stat-footer { border-top-color: rgba(0,0,0,0.15); }
+  .card-barang:hover { color: #fff; }
+  .card-barang .stat-footer { border-top-color: rgba(255,255,255,0.25); }
 
   /* ===== INFO CARDS (Stock & Omzet) ===== */
   .beach-card {
