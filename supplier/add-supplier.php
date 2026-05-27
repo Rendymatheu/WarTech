@@ -372,7 +372,7 @@ body.dark-mode .btn-save-beach:hover {
     <!-- ── Content ── -->
     <section class="content">
         <div class="container-fluid">
-            <div class="card beach-card">
+            <div class="card beach-card mb-0">
                 <form action="" method="post" autocomplete="off">
 
                     <!-- Card Header -->

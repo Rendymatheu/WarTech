@@ -323,7 +323,7 @@ $customer = getData($sqlEdit)[0];
 
     <section class="content">
         <div class="container-fluid">
-            <div class="card beach-card">
+            <div class="card beach-card mb-0">
 
                 <form action="" method="post">
                     <input type="hidden" name="id" value="<?= $customer['id_customer'] ?>">
@@ -392,6 +392,5 @@ $customer = getData($sqlEdit)[0];
         </div>
     </section>
 
-</div>
-
 <?php require "../template/footer.php"; ?>
+</div>

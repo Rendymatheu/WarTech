@@ -370,7 +370,7 @@ if (isset($_POST['simpan'])) {
     <!-- ===== Main Content ===== -->
     <section class="content">
         <div class="container-fluid">
-            <div class="card beach-card">
+            <div class="card beach-card mb-0">
 
                 <?php if ($alert == 'success'): ?>
                     <div class="alert alert-success alert-dismissible beach-alert">
@@ -497,19 +497,18 @@ if (isset($_POST['simpan'])) {
         </div>
     </section>
 
-</div><!-- /.content-wrapper -->
-
-<script>
-    function previewImage(input) {
-        if (input.files && input.files[0]) {
-            const reader = new FileReader();
-            reader.onload = e => {
-                document.getElementById('previewImg').src = e.target.result;
-            };
-            reader.readAsDataURL(input.files[0]);
+    <script>
+        function previewImage(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = e => {
+                    document.getElementById('previewImg').src = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
         }
-    }
-</script>
+    </script>
 
 <?php require "../template/footer.php"; ?>
+
 </div>
