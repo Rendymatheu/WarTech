@@ -306,7 +306,7 @@ $penjualan = getData("SELECT * FROM tbl_jual_head");
                                     <td><?= $jual['customer'] ?></td>
                                     <td><?= number_format($jual['total'], 0, ",", ".") ?></td>
                                     <td class="text-center">
-                                        <a href="detail-penjualan.php?id=<?= $jual['no_jual'] ?>&tgl=<?= in_date($jual['tgl_jual']) ?>"
+                                        <a href="<?= $main_url ?>laporan-penjualan/detail-penjualan.php?id=<?= $jual['no_jual'] ?>&tgl=<?= in_date($jual['tgl_jual']) ?>"
                                             class="btn btn-sm btn-detail-beach"
                                             title="rincian barang">
                                             <i class="fas fa-search mr-1"></i> Detail
