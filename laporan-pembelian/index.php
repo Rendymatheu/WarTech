@@ -1,6 +1,5 @@
 <?php
 
-session_save_path('/tmp');
 session_start();
 
 if (!isset($_SESSION["ssLoginPOS"])) {
@@ -306,7 +305,7 @@ $pembelian = getData("SELECT * FROM tbl_beli_head");
                                     <td><?= $beli['suplier'] ?></td>
                                     <td><?= number_format($beli['total'], 0, ",", ".") ?></td>
                                     <td class="text-center">
-                                        <a href="detail-pembelian.php?id=<?= $beli['no_beli'] ?>&tgl=<?= in_date($beli['tgl_beli']) ?>"
+                                        <a href="laporan-pembelian/detail-pembelian.php?id=<?= $beli['no_beli'] ?>&tgl=<?= in_date($beli['tgl_beli']) ?>"
                                             class="btn btn-sm btn-detail-beach"
                                             title="rincian barang">
                                             <i class="fas fa-search mr-1"></i> Detail
