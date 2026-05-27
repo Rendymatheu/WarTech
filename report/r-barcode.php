@@ -30,7 +30,7 @@ if (!isset($_SESSION["ssLoginPOS"])) {
 
             $barcode = $_GET['barcode'];
 
-            require '../asset/barcodeGenerator/vendor/autoload.php';
+            require __DIR__ . '/../../vendor/autoload.php';
 
             $generator = new Picqer\Barcode\BarcodeGeneratorPNG();
             echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($barcode, $generator::TYPE_CODE_128)) . '"
