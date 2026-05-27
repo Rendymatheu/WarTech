@@ -16,10 +16,34 @@
             display: none !important;
         }
 
+        .user-dropdown-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,.15) !important;
+            border: 1.5px solid rgba(255,255,255,.3) !important;
+            border-radius: 20px;
+            padding: 6px 14px;
+            transition: background .2s;
+        }
+
+        .user-dropdown-btn:hover {
+            background: rgba(255,255,255,.25) !important;
+        }
+
         /* Dark mode - trigger button */
-        body.dark-mode .nav-item.dropdown .nav-link.dropdown-toggle {
-            background: rgba(0, 188, 212, .15) !important;
+        body.dark-mode .user-dropdown-btn {
+            background: rgba(0, 188, 212, .12) !important;
             border: 1.5px solid rgba(0, 188, 212, .3) !important;
+        }
+
+        body.dark-mode .user-dropdown-btn:hover {
+            background: rgba(0, 188, 212, .22) !important;
+        }
+
+        body.dark-mode .user-dropdown-btn span,
+        body.dark-mode .user-dropdown-btn i {
+            color: #e0f7fa !important;
         }
 
         /* Dark mode - dropdown menu */
@@ -70,17 +94,10 @@
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                background: rgba(255,255,255,.15);
-                border-radius: 20px;
-                padding: 6px 14px;
-            ">
+            <a href="#" class="nav-link dropdown-toggle user-dropdown-btn" data-toggle="dropdown">
                 <img src="<?= $main_url ?>asset/image/<?= userLogin()['foto'] ?>" 
                     width="28" height="28" 
-                    style="border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,.6);">
+                    style="border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,.6); flex-shrink: 0;">
                 <div style="display: flex; flex-direction: column; line-height: 1.2;">
                     <span style="font-weight: 700; font-size: 13px;"><?= userLogin()['username'] ?></span>
                     <span style="font-size: 10px; opacity: .75;">
@@ -111,19 +128,19 @@
                 </div>
 
                 <!-- Edit Profile -->
-                <a href="<?= $main_url ?>user/edit-user.php?id=<?= userLogin()['userid'] ?>" class="dropdown-item" style="padding: 12px 18px; font-weight: 600;">
+                <a href="<?= $main_url ?>user/edit-user.php?id=<?= userLogin()['userid'] ?>" class="dropdown-item" style="padding: 12px 18px; font-weight: 500;">
                     <i class="fas fa-user-edit mr-2" style="color: #00bcd4;"></i> Edit Profile
                 </a>
                 <div class="dropdown-divider" style="margin: 0;"></div>
 
                 <!-- Change Password -->
-                <a href="<?= $main_url ?>auth/change-password.php" class="dropdown-item" style="padding: 12px 18px; font-weight: 600;">
+                <a href="<?= $main_url ?>auth/change-password.php" class="dropdown-item" style="padding: 12px 18px; font-weight: 500;">
                     <i class="fas fa-key mr-2" style="color: #ffa726;"></i> Change Password
                 </a>
                 <div class="dropdown-divider" style="margin: 0;"></div>
 
                 <!-- Log Out -->
-                <a href="<?= $main_url ?>auth/logout.php" class="dropdown-item" style="padding: 12px 18px; font-weight: 600; color: #e53935;">
+                <a href="<?= $main_url ?>auth/logout.php" class="dropdown-item" style="padding: 12px 18px; font-weight: 500; color: #e53935;">
                     <i class="fas fa-sign-out-alt mr-2"></i> Log Out
                 </a>
             </div>
