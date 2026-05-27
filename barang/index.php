@@ -363,6 +363,7 @@ if ($msg == 'updated') {
                                 <th>Gambar</th>
                                 <th>ID Barang</th>
                                 <th>Nama Barang</th>
+                                <th>Barcode</th>
                                 <th>Harga Beli</th>
                                 <th>Harga Jual</th>
                                 <th style="width: 15%;" class="text-center">Operasi</th>
@@ -380,7 +381,8 @@ if ($msg == 'updated') {
                                     </td>
                                     <td><?= $brg['id_barang'] ?></td>
                                     <td><?= $brg['nama_barang'] ?></td>
-                                    <td>
+                                    <td><?= $brg['barcode'] ?></td>
+                                    <td>   
                                         <span class="badge-price">
                                             Rp <?= number_format($brg['harga_beli'], 0, ',', '.') ?>
                                         </span>
@@ -392,8 +394,7 @@ if ($msg == 'updated') {
                                     </td>
                                     <td class="text-center">
                                         <button type="button"
-                                            class="btn btn-sm btn-barcode-beach"
-                                            id="btnCetakBarcode"
+                                            class="btn btn-sm btn-barcode-beach btnCetakBarcode"
                                             data-barcode="<?= $brg['barcode'] ?>"
                                             data-nama="<?= $brg['nama_barang'] ?>"
                                             title="cetak barcode">
@@ -468,7 +469,7 @@ if ($msg == 'updated') {
 
     <script>
         $(document).ready(function() {
-            $(document).on("click", "#btnCetakBarcode", function() {
+            $(document).on("click", ".btnCetakBarcode", function() {
                 $('#mdlCetakBarcode').modal('show');
                 let barcode = $(this).data('barcode');
                 let nama = $(this).data('nama');
