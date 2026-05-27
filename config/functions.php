@@ -1,65 +1,51 @@
 <?php
 
-function uploadimg($url = null, $name = null)
-{
+function uploadimg($url = null, $name = null) {
     $namafile = $_FILES['image']['name'];
     $ukuran   = $_FILES['image']['size'];
     $tmp      = $_FILES['image']['tmp_name'];
 
-    // Validasi ekstensi gambar
-    $ekstensiGambarValid = ['jpg', 'jpeg', 'png', 'gif'];
-    $ekstensiGambar = explode('.', $namafile);
-    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    $ekstensiValid = ['jpg', 'jpeg', 'png', 'gif'];
+    $ext = strtolower(pathinfo($namafile, PATHINFO_EXTENSION));
 
-    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
-
-        if ($url != null) {
-
-            echo '<script>
-                    alert("File yang anda upload bukan gambar!");
-                    document.location.href="' . $url . '";
-                  </script>';
-            die();
-
-        } else {
-
-            echo '<script>
-                    alert("File yang anda upload bukan gambar!");
-                  </script>';
-            return false;
-        }
+    if (!in_array($ext, $ekstensiValid)) {
+        echo "<script>alert('File bukan gambar!');</script>";
+        return false;
     }
 
-    // Validasi ukuran max 1MB
     if ($ukuran > 1000000) {
-
-        if ($url != null) {
-
-            echo '<script>
-                    alert("Ukuran gambar melebihi 1 MB!");
-                    document.location.href="' . $url . '";
-                  </script>';
-            die();
-
-        } else {
-
-            echo '<script>
-                    alert("Ukuran gambar tidak boleh melebihi 1 MB!");
-                  </script>';
-            return false;
-        }
+        echo "<script>alert('Ukuran gambar melebihi 1 MB!');</script>";
+        return false;
     }
 
-    // Nama file baru
-    if ($name != null) {
-        $namaFileBaru = $name . '.' . $ekstensiGambar;
-    } else {
-        $namaFileBaru = rand(10, 1000) . '-' . $namafile;
-    }
+    // Upload ke Cloudinary
+    $cloud     = getenv('CLOUDINARY_CLOUD_NAME');
+    $key       = getenv('CLOUDINARY_API_KEY');
+    $secret    = getenv('CLOUDINARY_API_SECRET');
+    $timestamp = time();
 
-    move_uploaded_file($tmp, '../asset/image/' . $namaFileBaru);
+    $publicId  = $name ?? pathinfo($namafile, PATHINFO_FILENAME) . '_' . $timestamp;
+    $signature = sha1("public_id=$publicId&timestamp=$timestamp$secret");
 
-    return $namaFileBaru;
+    $data      = base64_encode(file_get_contents($tmp));
+    $mime      = mime_content_type($tmp);
+
+    $ch = curl_init("https://api.cloudinary.com/v1_1/$cloud/image/upload");
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST           => true,
+        CURLOPT_POSTFIELDS     => [
+            'file'      => "data:$mime;base64,$data",
+            'public_id' => $publicId,
+            'timestamp' => $timestamp,
+            'api_key'   => $key,
+            'signature' => $signature,
+        ]
+    ]);
+    $res = json_decode(curl_exec($ch), true);
+    curl_close($ch);
+
+    return $res['secure_url'] ?? null;
 }
 
 

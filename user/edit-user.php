@@ -471,7 +471,7 @@ if (isset($_POST['koreksi'])) {
                                 <div class="upload-area">
                                     <input type="hidden" name="oldImg" value="<?= $user['foto'] ?>">
 
-                                    <img src="<?= $main_url ?>asset/image/<?= $user['foto'] ?>"
+                                    <img src="<?= $user['foto'] ?>"
                                         class="profile-user-img img-circle"
                                         id="previewImg"
                                         alt="Foto profil">
