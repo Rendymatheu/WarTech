@@ -33,11 +33,10 @@ function insert($data)
           </script>";
         return false;
     }
-    if ($gambar != '') {
+    if ($gambar != null) {
         $gambar = uploadimg();
-        if (!$gambar) return false;
     } else {
-        $gambar = 'https://res.cloudinary.com/dbd6dn5pl/image/upload/v1779867297/profile_shsrqw.jpg';
+        $gambar = 'default.png';
     }
     // gambar tidak sesuai validasi
     if ($gambar == '') {
@@ -53,8 +52,13 @@ function insert($data)
 function delete($id, $foto)
 {
     global $koneksi;
+
     $sqlDel = "DELETE FROM tbl_user WHERE userid = $id";
     mysqli_query($koneksi, $sqlDel);
+
+    if ($foto != 'default.png') {
+        unlink('../asset/image/' . $foto);
+    }
     return mysqli_affected_rows($koneksi);
 }
 
@@ -111,9 +115,13 @@ function update($data)
     }
 
     // cek gambar
-    if ($gambar != '') {
-        $imgUser = uploadimg();
-        if (!$imgUser) return false;
+    if ($gambar != null) {
+        $url = "data-user.php";
+        $imgUser = uploadimg($url);
+
+        if ($fotoLama != 'default.png') {
+            @unlink('../asset/image/' . $fotoLama);
+        }
     } else {
         $imgUser = $fotoLama;
     }

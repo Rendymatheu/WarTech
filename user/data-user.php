@@ -362,7 +362,7 @@ require "../template/sidebar.php";
                                 <tr>
                                     <td><?= $no++ ?></td>
                                     <td>
-                                        <img src="<?= $user['foto'] ?>"
+                                        <img src="../asset/image/<?= $user['foto'] ?>"
                                              class="rounded-circle"
                                              alt="foto"
                                              width="48px"
