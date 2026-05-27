@@ -41,8 +41,8 @@ if (!isset($_SESSION["ssLoginPOS"])) {
     for ($i = 1; $i <= $jmlCetak; $i++) { ?>
         <div style="text-align:center; width:210px; float:left; margin-right:30px; margin-bottom:30px;">
             <?php
-            $generator = new Picqer\Barcode\BarcodeGeneratorPNG();
-            echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($barcode, $generator::TYPE_CODE_128)) . '" width="200px">';
+            $generator = new Picqer\Barcode\BarcodeGeneratorSVG();
+            echo $generator->getBarcode($barcode, $generator::TYPE_CODE_128, 3, 80);
             ?>
             <div><?= $barcode ?></div>
         </div>
