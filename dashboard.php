@@ -134,7 +134,7 @@ $brgNum = count($barang);
   .card-users    { background: linear-gradient(135deg, #FF8C00, #FFA940); }
   .card-supplier { background: linear-gradient(135deg, #0096C7, #00B4D8); }
   .card-customer { background: linear-gradient(135deg, #E63946, #FF6B6B); }
-  .card-barang   { background: linear-gradient(135deg, #D4AC0D, #F4D03F); color: #333; }
+  .card-barang   { background: linear-gradient(135deg, #D4AC0D, #F4D03F); color: #fff; }
   .card-barang:hover { color: #333; }
   .card-barang .stat-footer { border-top-color: rgba(0,0,0,0.15); }
 
