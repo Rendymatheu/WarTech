@@ -179,9 +179,13 @@ if (isset($_POST['simpan'])) {
         .beach-select {
             border-radius: 12px !important;
             border: 2px solid #ffe0b2 !important;
-            padding: 10px 14px !important;
+            padding: 0px 14px !important;
+            height: 46px !important;
+            line-height: 46px !important;
             background: #fffdf8 !important;
             transition: border-color .2s, box-shadow .2s;
+            appearance: auto !important;
+            -webkit-appearance: auto !important;
         }
         .beach-select:focus {
             border-color: #ffa726 !important;
@@ -300,6 +304,9 @@ if (isset($_POST['simpan'])) {
             background: #1e2d3d !important;
             border-color: #5d4037 !important;
             color: #ffe0b2 !important;
+            height: 46px !important;
+            line-height: 46px !important;
+            padding: 0 14px !important;
         }
         body.dark-mode .beach-input:focus,
         body.dark-mode .beach-select:focus {
@@ -505,3 +512,4 @@ if (isset($_POST['simpan'])) {
 </script>
 
 <?php require "../template/footer.php"; ?>
+</div>
