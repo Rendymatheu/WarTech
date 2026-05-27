@@ -11,7 +11,7 @@ require "../config/config.php";
 require "../config/functions.php";
 require "../module/mode-customer.php";
 
-$title = "Edit Customer - Codingline POS";
+$title = "Edit Customer";
 
 require "../template/header.php";
 require "../template/navbar.php";

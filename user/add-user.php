@@ -11,7 +11,7 @@ require "../config/config.php";
 require "../config/functions.php";
 require "../module/mode-user.php";
 
-$title = "Tambah User - Codingline POS";
+$title = "Tambah User";
 require "../template/header.php";
 require "../template/navbar.php";
 require "../template/sidebar.php";
