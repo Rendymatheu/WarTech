@@ -396,7 +396,7 @@ if (isset($_POST['koreksi'])) {
 
     <section class="content">
         <div class="container-fluid">
-            <div class="card beach-card">
+            <div class="card beach-card mb-0">
 
                 <form action="" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?= $user['userid'] ?>">
@@ -497,8 +497,6 @@ if (isset($_POST['koreksi'])) {
         </div>
     </section>
 
-</div>
-
 <script>
     // Live preview foto profil saat file baru dipilih
     document.getElementById('imageInput').addEventListener('change', function (e) {
@@ -514,3 +512,4 @@ if (isset($_POST['koreksi'])) {
 </script>
 
 <?php require "../template/footer.php"; ?>
+</div>

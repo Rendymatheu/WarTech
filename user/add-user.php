@@ -389,7 +389,7 @@ if (isset($_POST['simpan'])) {
 
     <section class="content">
         <div class="container-fluid">
-            <div class="card beach-card">
+            <div class="card beach-card mb-0">
 
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="card-header d-flex align-items-center justify-content-between">
@@ -502,8 +502,6 @@ if (isset($_POST['simpan'])) {
         </div>
     </section>
 
-</div>
-
 <script>
     // Live preview foto profil saat file dipilih
     document.getElementById('imageInput').addEventListener('change', function (e) {
@@ -519,3 +517,4 @@ if (isset($_POST['simpan'])) {
 </script>
 
 <?php require "../template/footer.php"; ?>
+</div>
