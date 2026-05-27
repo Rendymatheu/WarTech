@@ -1,5 +1,5 @@
 <?php
 
-header('location: data-supplier.php')
+header('location: ../supplier/data-supplier.php');
 
 ?>

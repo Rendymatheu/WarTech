@@ -312,7 +312,7 @@ $brgNum = count($barang);
       <!-- Stat Boxes -->
       <div class="row">
         <div class="col-lg-3 col-6">
-          <a href="<?= $main_url ?>user" class="beach-stat-card card-users">
+          <a href="<?= $main_url ?>user/data-user.php" class="beach-stat-card card-users">
             <div class="stat-label">Users</div>
             <div class="stat-number"><?= $userNum ?></div>
             <div class="stat-footer">More info &rarr;</div>
@@ -320,7 +320,7 @@ $brgNum = count($barang);
           </a>
         </div>
         <div class="col-lg-3 col-6">
-          <a href="<?= $main_url ?>supplier" class="beach-stat-card card-supplier">
+          <a href="<?= $main_url ?>supplier/data-supplier.php" class="beach-stat-card card-supplier">
             <div class="stat-label">Supplier</div>
             <div class="stat-number"><?= $supplierNum ?></div>
             <div class="stat-footer">More info &rarr;</div>
@@ -328,7 +328,7 @@ $brgNum = count($barang);
           </a>
         </div>
         <div class="col-lg-3 col-6">
-          <a href="<?= $main_url ?>customer" class="beach-stat-card card-customer">
+          <a href="<?= $main_url ?>customer/data-customer.php" class="beach-stat-card card-customer">
             <div class="stat-label">Customer</div>
             <div class="stat-number"><?= $customerNum ?></div>
             <div class="stat-footer">More info &rarr;</div>

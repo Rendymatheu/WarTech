@@ -1,5 +1,5 @@
 <?php
 
-header('location: data-user.php')
+header('location: ../user/data-user.php');
 
 ?>
