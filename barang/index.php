@@ -400,12 +400,12 @@ if ($msg == 'updated') {
                                             title="cetak barcode">
                                             <i class="fas fa-barcode"></i>
                                         </button>
-                                        <a href="form-barang.php?id=<?= $brg['id_barang'] ?>&msg=editing"
+                                        <a href="<?= $main_url ?>barang/form-barang.php?id=<?= $brg['id_barang'] ?>&msg=editing"
                                             class="btn btn-sm btn-edit-beach"
                                             title="edit barang">
                                             <i class="fas fa-pen"></i>
                                         </a>
-                                        <a href="?id=<?= $brg['id_barang'] ?>&gbr=<?= $brg['gambar'] ?>&msg=deleted"
+                                        <a href="<?= $main_url ?>barang/index.php?id=<?= $brg['id_barang'] ?>&gbr=<?= $brg['gambar'] ?>&msg=deleted"
                                             class="btn btn-sm btn-danger btn-delete-beach"
                                             title="hapus barang"
                                             onclick="return confirm('Anda yakin akan menghapus barang ini ?')">
