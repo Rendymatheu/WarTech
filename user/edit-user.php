@@ -129,6 +129,7 @@ if (isset($_POST['koreksi'])) {
 
         .beach-card select.form-control {
             cursor: pointer;
+            height: 46px !important;
         }
 
         .beach-card textarea.form-control {
