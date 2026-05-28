@@ -360,7 +360,7 @@ body.dark-mode .btn-save-beach:hover {
                             <a href="<?= $main_url ?>dashboard.php">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="<?= $main_url ?>Customer/data-customer.php">Customer</a>
+                            <a href="<?= $main_url ?>customer/data-customer.php">Customer</a>
                         </li>
                         <li class="breadcrumb-item active">Add Customer</li>
                     </ol>

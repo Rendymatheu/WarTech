@@ -247,10 +247,7 @@ $brgNum = count($barang);
   }
   body.dark-mode .card-barang {
     background: linear-gradient(135deg, #8a6d00, #b8860b) !important;
-    color: #f5f5f5 !important;
-  }
-  body.dark-mode .card-barang:hover {
-    color: #f5f5f5 !important;
+    
   }
 
   /* Info cards */
